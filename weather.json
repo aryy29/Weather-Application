@@ -1,0 +1,50 @@
+[
+   {
+       "date": "2025-03-01",
+       "day":"Monday",
+       "temp": 25,
+       "condition": "Sunny"
+   },
+
+
+   {
+       "date": "2025-03-02",
+       "day":"Tuesday",
+       "temp": 22,
+       "condition": "Cloudy with Thunderstorm and extreme Lightning"
+   },
+
+
+   { "date": "2025-03-03",
+   "day":"Wednesday",
+   "temp": 13,
+   "condition": "Rainy"
+},
+
+
+{ "date": "2025-03-04",
+"day":"Thursday",
+"temp": 15,
+"condition": "Rainy along with Humid Atmosphere"
+},
+
+
+{ "date": "2025-03-05",
+"day":"Friday",
+"temp": 29,
+"condition": "Sunny"
+},
+
+
+{ "date": "2025-03-06",
+"day":"Saturday",
+"temp": 30,
+"condition": "Extreme Sunny"
+},
+
+
+{ "date": "2025-03-07",
+"day":"Sunday",
+"temp": 33,
+"condition": "Extreme Sunny"}
+]

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="weatherApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast SPA</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://code.angularjs.org/1.6.5/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.5/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.5/angular-resource.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #e0f7fa, #80deea);
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background-color: #00796b;
+    border: none;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-size: 24px;
+}
+
+.navbar-nav > li > a {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+.current-weather {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.current-weather:hover {
+    transform: scale(1.05);
+}
+
+.forecast-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+    color: #004d40;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+footer {
+    background-color: #004d40;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+img {
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Weather App</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fa fa-info-circle"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4">
+        <section class="text-center mb-8">
+            <h2 class="text-3xl font-bold mb-4">Current Weather</h2>
+            <div class="current-weather">
+                <img alt="Current weather icon" class="mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/7FyzzCs2inlvvLMj21q_1qS2dvSJcLIb5SWeC1r30gE.jpg" width="100" />
+                <p class="text-2xl font-bold">25°C</p>
+                <p class="text-gray-600">Sunny</p>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-bold mb-4">Weather Forecast</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="forecast-card">
+                    <p class="font-bold">Monday</p>
+                    <img alt="Monday weather icon" class="mx-auto mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/mMWMjNnrnZ9xYXG25sY3Y0WDUgS4srHhbYhUrhTb8Z4.jpg" width="50" />
+                    <p>22°C / 15°C</p>
+                    <p class="text-gray-600">Partly Cloudy</p>
+                </div>
+                <div class="forecast-card">
+                    <p class="font-bold">Tuesday</p>
+                    <img alt="Tuesday weather icon" class="mx-auto mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/NsQdI6AwT1mlZxI8CACbpKcqSaRmlbHyP8RNLJxtck0.jpg" width="50" />
+                    <p>24°C / 16°C</p>
+                                        <p>24°C / 16°C</p>
+                    <p class="text-gray-600">Sunny</p>
+                </div>
+                <div class="forecast-card">
+                    <p class="font-bold">Wednesday</p>
+                    <img alt="Wednesday weather icon" class="mx-auto mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/tCwma3-tHkuxNRAED-BMcgL844YspvGHQQ9RCtPwjf4.jpg" width="50" />
+                    <p>20°C / 14°C</p>
+                    <p class="text-gray-600">Rainy</p>
+                </div>
+                <div class="forecast-card">
+                    <p class="font-bold">Thursday</p>
+                    <img alt="Thursday weather icon" class="mx-auto mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/a-XKSQwn5vOSTjxLbhc-w0oVjJxAj4B3wgk2uYzjmuw.jpg" width="50" />
+                    <p>23°C / 15°C</p>
+                    <p class="text-gray-600">Cloudy</p>
+                </div>
+                <div class="forecast-card">
+                    <p class="font-bold">Friday</p>
+                    <img alt="Friday weather icon" class="mx-auto mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/LWfBrrUkseX7h_A6NUu8gZkBuOIgBKmzsTSZn2S0XFQ.jpg" width="50" />
+                    <p>25°C / 17°C</p>
+                    <p class="text-gray-600">Sunny</p>
+                </div>
+                <div class="forecast-card">
+                    <p class="font-bold">Saturday</p>
+                    <img alt="Saturday weather icon" class="mx-auto mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/93QtJ0n16jsemSnssl4tTVw2EWQy6D9krMAUMYib-ZQ.jpg" width="50" />
+                    <p>21°C / 14°C</p>
+                    <p class="text-gray-600">Windy</p>
+                </div>
+                <div class="forecast-card">
+                    <p class="font-bold">Sunday</p>
+                    <img alt="Sunday weather icon" class="mx-auto mb-2" height="50" src="https://storage.googleapis.com/a1aa/image/MMRFvuI7HVxBCYJTojccpQh_JSG2XJf7V5tR4kQRemg.jpg" width="50" />
+                    <p>22°C / 15°C</p>
+                    <p class="text-gray-600">Partly Cloudy</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-600 text-white p-4 text-center">
+        <p>© 2025 Weather App. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
